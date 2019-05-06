@@ -604,8 +604,8 @@ func converTx(rawTx Tx) (*bchain.Tx, error) {
 		vout := bchain.Vout{
 			ValueSat: *big.NewInt(output.Value),
 			//JsonValue: 	"",
-			//LockTime:	output.LockTime,
-			N: uint32(index),
+			LockTime: output.LockTime,
+			N:        uint32(index),
 			ScriptPubKey: bchain.ScriptPubKey{
 				Hex: output.Address,
 				Addresses: []string{
